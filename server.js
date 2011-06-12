@@ -12,6 +12,10 @@ server = http.createServer(function(request, response) {
 	
 	path = request.url.split("/");
 	operation = path[1];
+	if (operation === "reset") {
+		accumulator = 0;
+	}
+	
 	value = parseInt(path[path.length - 1], 10);
 	
 	if (value || value === 0) {
